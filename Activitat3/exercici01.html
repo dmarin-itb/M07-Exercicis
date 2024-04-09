@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Activitat 3 - Exercici 01</title>
+</head>
+<body>
+    <form action="exercici01.php" method="POST">
+        <fieldset>
+            <legend>Dades personals</legend>
+            <label for="nom">Nom</label><br/>
+            <input type="text" name="nom" size="10"/><br/>
+
+            <label for="cognom">Cognoms</label><br/>
+            <input type="text" name="cognoms" size="25"/><br/><br/>
+
+
+        <!--
+            Masculí
+            Femení
+            No binari
+            Gènere fluïd
+            Agènere
+            Transgènere
+            Bigènere
+            Pangènere
+            Genderqueer
+            Gènere no conforma
+            Intersex
+            Altres
+
+            Masculí: Identitat de gènere associada culturalment amb el gènere masculí, típicament vinculada amb el sexe biològic masculí en néixer.
+            Femení: Identitat de gènere associada culturalment amb el gènere femení, típicament vinculada amb el sexe biològic femení en néixer.
+            No binari: Persona que no es conforma exclusivament amb la categoria de masculí o femení. Pot incloure diverses identitats de gènere com ara gènere fluïd, agènere, etc.
+            Gènere fluïd: Identitat de gènere que pot canviar amb el temps o en diferents situacions. Les persones de gènere fluïd poden sentir-se tant masculines com femenines, o cap de les dues, en diferents moments.
+            Agènere: Persona que no s'identifica amb cap gènere en absolut o que no s'identifica dins del sistema binari de gènere.
+            Transgènere: Persona la identitat de gènere de la qual difereix de les expectatives culturals associades amb el sexe biològic assignat en néixer.
+            Bigènere: Persona que experimenta dos gèneres simultàniament o que pot canviar entre ells.
+            Pangènere: Persona la identitat de gènere de la qual es manifesta de manera àmplia i no està limitada per les categories binàries tradicionals.
+            Genderqueer: Terme paraigua que abasta una varietat d'identitats de gènere que desafien les normes de gènere tradicionals.
+            Gènere no conforma: Persona la expressió de gènere o identitat de gènere de la qual no es conforma amb les expectatives culturals associades amb el seu sexe assignat en néixer.
+            Intersex: Persona que neix amb característiques sexuals que no s'ajusten a les definicions típiques de masculí o femení.
+        -->
+
+            <label for="genere">Gènere</label><br/>
+            <input type="radio" name="genere" value="Masculí"/>
+            <label for="radio"> Masculí</label><br/>
+            <input type="radio" name="genere" value="Femení"/>
+            <label for="radio"> Femení</label><br/>
+            <input type="radio" name="genere" value="No binari"/>
+            <label for="radio"> No binari</label><br/>
+            <input type="radio" name="genere" value="Gènere fluïd"/>
+            <label for="radio"> Gènere fluïd</label><br/>
+            <input type="radio" name="genere" value="Agènere"/>
+            <label for="radio"> Agènere</label><br/>
+            <input type="radio" name="genere" value="Transgènere"/>
+            <label for="radio"> Transgènere</label><br/>
+            <input type="radio" name="genere" value="Bigènere"/>
+            <label for="radio"> Bigènere</label><br/>
+            <input type="radio" name="genere" value="Pangènere"/>
+            <label for="radio"> Pangènere</label><br/>
+            <input type="radio" name="genere" value="Altres"/>
+            <label for="radio"> Altres</label><br/><br/>
+            <!-- s'hauria d'acabar -->
+
+            <label for="email">EMail</label><br/>
+            <input type="text" name="email" size="25"/><br/><br/>
+
+            <label for="edat">Edat</label><br/>
+            <input type="number" name="edat" size="3" max="130" min="12"/><br/><br/>
+
+            <label for="ciutat">Ciutat</label><br/>
+            <input list="ciutat" name="ciutat"/>
+            <datalist id="ciutat">
+                <option value="Londres"/>
+                <option value="París"/>
+                <option value="Berlín"/>
+                <option value="Amsterdam"/>
+            </datalist><br/><br/>
+
+            <label for="aficions">Aficions</label><br/>
+            <input type="checkbox" name="aficions[]" id="senderisme" value="senderisme"/>
+            <label for="senderisme"> Senderisme</label><br/>
+            <input type="checkbox" name="aficions[]" id="ciclisme" value="ciclisme"/>
+            <label for="ciclisme"> Ciclisme</label><br/>
+            <input type="checkbox" name="aficions[]" id="trailRunning" value="córrer per muntanya"/>
+            <label for="trailRunning"> Córrer per muntanya</label><br/>
+            <input type="checkbox" name="aficions[]" id="lectura" value="lectura"/>
+            <label for="lectura"> Lectura</label><br/>
+            <input type="checkbox" name="aficions[]" id="programació" value="programació"/>
+            <label for="programació"> Programació, què si no?</label><br/>
+            <input type="checkbox" name="aficions[]" id="altres" value="altres"/>
+            <label for="altres"> Altres: cercar petxines a la platja, mirar els núbols, jugar a BrawlStars...</label>
+        </fieldset>
+        <br/>
+
+        <fieldset>
+            <legend>Sobre tu</legend>
+            <textarea name="sobreTu" cols="35" rows="5"></textarea>
+        </fieldset>
+        <br/>
+
+        <button value="Enviar">Enviar</button>
+    </form>
+</body>
+</html>

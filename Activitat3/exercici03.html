@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activitat 3 - Exercici 01</title>
+    <script>
+        function validar(){
+            if(f1.text.value.length>0){
+                if(f1.paraula.value.length>0){
+                    return true;
+                } else {
+                    alert("Paraula no omplert!");
+                    return false;
+                }
+            } else {
+                alert("Text no omplert!");
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form name="f1" action="exercici03.php" method="GET" onsubmit="return validar();">
+        <label for="text">Text</label><br/>
+        <textarea name="text" id="text" cols="40" rows="7"></textarea></textarea><br/> <!--provar a afegir required-->
+        <label for="paraula">Paraula a cercar</label><br/>
+        <input type="text" name="paraula" size="15"/><br/><br/> <!--provar a afegir required-->
+
+        <button value="Enviar">Enviar</button>
+    </form>    
+</body>
+</html>
