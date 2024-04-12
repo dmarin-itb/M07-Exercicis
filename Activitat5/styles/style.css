@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6eae7c6;
+    margin-top: 100px;
+    padding: 0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*contenidors*/
+nav {
+    text-align: center;
+}
+footer {
+    text-align: center;
+    margin-top: 50px;
+    height: 50px;
+}
+#container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/*elements de text*/
+a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/*elements de taula*/
+table {
+    border-collapse: collapse;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+td.img {
+    width: 100%;
+}
+
+/*elements de formulari*/
+form {
+    text-align: center;
+}
+input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+input[type="radio"] {
+    display: none;
+}
+label {
+    display: inline-block;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+label:hover {
+    transform: scale(1.2);
+}
+.red { background-color: #f18888; }
+.green { background-color: #68fa6f; }
+.blue { background-color: #90aff1; }
+.yellow { background-color: #def369; }
