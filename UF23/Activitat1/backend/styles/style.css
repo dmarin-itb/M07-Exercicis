@@ -1,0 +1,53 @@
+/* Estilos generales para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a8a8d0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales para el formulario */
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para las celdas de la tabla */
+table {
+    width: 100%;
+    border: 1px;
+}
+
+td {
+    padding: 5px;
+}
+
+/* Estilos para los inputs */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar */
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Cambiar el color del botón cuando se pasa el ratón sobre él */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
