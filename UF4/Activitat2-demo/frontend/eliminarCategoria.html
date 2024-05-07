@@ -1,0 +1,16 @@
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const catId = urlParams.get('cat_id');
+    console.log(catId);
+    fetch(`../api/categories.php?cat_id=${catId}`,{
+        method: 'DELETE'                
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status == 'success') {
+                self.location.href='veureCategories.html';
+            } else {
+                alert('S´ha produït un error al crear la categoria');
+            }
+        });
+</script>

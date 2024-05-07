@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Modificar categoria</title>
+    </head>
+    <body>
+        <h1>Modificar categoria</h1>
+        <form id="categoria-form">
+            <label for="cat-nom">Nom:</label>
+            <input type="text" id="cat-nom" name="cat_nom"><br>
+            <button type="submit">Guardar</button>
+        </form>
+
+        <!-- càrrega de les dades de la categoria al formulari -->
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const catId = urlParams.get('cat_id');
+            fetch(`../api/categories.php?cat_id=${catId}`,{
+                method: 'GET'                
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    const categoriaInput = document.getElementById('cat-nom');
+                    categoriaInput.value=data.cat_nom;
+                });
+        </script>
+
+        <!-- control de l'enviament de les noves dades de la categoria -->
+        <script>
+            const form = document.getElementById('categoria-form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const nom = document.getElementById('cat-nom').value;
+                const data = {
+                    cat_nom: nom
+                };
+                fetch(`../api/categories.php?cat_id=${catId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'success') {
+                        form.reset();
+                        self.location.href='veureCategories.html';
+                    } else {
+                        alert('S´ha produït un error al modificar la categoria');
+                    }
+                })
+                .catch(error => {
+                    alert('S´ha produït un error al modificar la categoria');
+                    console.error(error);
+                });
+            });
+        </script>
+    </body>
+</html>

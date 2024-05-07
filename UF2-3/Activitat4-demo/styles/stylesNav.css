@@ -1,0 +1,64 @@
+/* Estilos para el elemento de navegación */
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Estilos para los enlaces de navegación */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px; /* Añadir espacio entre enlaces */
+    transition: color 0.3s ease;
+}
+
+/* Cambiar el color del enlace al pasar el ratón sobre él */
+nav a:hover {
+    color: #f39c12;
+}
+
+/* Estilos para el icono de hamburguesa */
+.menu-icon {
+    display: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para la lista de navegación en versión móvil */
+.nav-desktop {
+    display: flex;
+    list-style-type: none;
+}
+
+/* Estilos para los enlaces de navegación en versión móvil */
+.nav-desktop li {
+    margin-right: 20px;
+}
+
+/* Estilos para el menú desplegable en versión móvil */
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked ~ .nav-desktop {
+    display: none;
+}
+
+#menu-toggle:checked ~ .menu-icon:before {
+    content: "\2715"; /* ✕ (multiplicación) */
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    .nav-desktop {
+        display: none;
+    }
+}

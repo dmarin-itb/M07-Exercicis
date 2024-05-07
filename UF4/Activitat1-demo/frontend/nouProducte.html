@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Nou producte</title>
+    </head>
+    <body>
+        <h1>Nou producte</h1>
+        <form id="producte-form">
+            <label for="pro-nom">Nom:</label>
+            <input type="text" id="pro-nom" name="pro_nom"><br>
+            <label for="pro-preu">Preu:</label>
+            <input type="text" id="pro-preu" name="pro_preu"><br>
+            <button type="submit">Guardar</button>
+        </form>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const catId = urlParams.get('cat_id');
+            const form = document.getElementById('producte-form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const nom = document.getElementById('pro-nom').value;
+                const preu = document.getElementById('pro-preu').value;
+                const data = {
+                    pro_nom: nom,
+                    pro_preu: preu
+                };
+                fetch(`../api/productes.php?cat_id=${catId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'success') {
+                        form.reset();
+                        self.location.href=`veureProductes.html?cat_id=${catId}`;
+                    } else {
+                        alert('S´ha produït un error al crear el producte');
+                    }
+                })
+                .catch(error => {
+                    alert('S´ha produït un error al crear el producte');
+                    console.error(error);
+                });
+            });
+        </script>
+    </body>
+</html>

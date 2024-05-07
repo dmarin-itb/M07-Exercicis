@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Veure categories</title>
+    </head>
+    <body>
+        <h1>Categories</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th colspan="2">Operacions</th>
+                </tr>
+            </thead>
+            <tbody id="categories-table">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2"><a href="novaCategoria.html">Nova categoria</a></th>
+                </tr>
+            </tfoot>
+        </table>
+        <script>
+            fetch('../api/categories.php')
+                .then(response => response.json())
+                .then(data => {
+                    const categoriesTable = document.getElementById('categories-table');
+                    data.forEach(categoria => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${categoria.cat_id}</td>
+                            <td><a href='veureProductes.html?cat_id=${categoria.cat_id}'>${categoria.cat_nom}</a></td>
+                            <td><a href='modificarCategoria.html?cat_id=${categoria.cat_id}'>Modificar</a></td>
+                            <td><a href='eliminarCategoria.html?cat_id=${categoria.cat_id}'>Eliminar</a></td>
+                        `;
+                        categoriesTable.appendChild(row);
+                    });
+                });
+        </script>
+    </body>
+</html>

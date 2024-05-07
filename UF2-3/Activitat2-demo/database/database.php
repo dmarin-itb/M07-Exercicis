@@ -1,8 +1,8 @@
 <?php
-    $servername = "sql11.freemysqlhosting.net";
-    $database = "sql11698951";
-    $username = "sql11698951";
-    $password = "L93CaW2g5Z";
+    $servername = "localhost";
+    $database = "botiga";
+    $username = "root";
+    $password = "";
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $database);
     // Check connection
