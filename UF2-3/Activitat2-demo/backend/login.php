@@ -2,7 +2,7 @@
     include("includes/head.html");
 ?>
 
-<form action="login.proc.php" method="GET">
+<form action="login.proc.php" method="POST">
     <table>
     <tr>
             <td>Mail usuari:</td>
